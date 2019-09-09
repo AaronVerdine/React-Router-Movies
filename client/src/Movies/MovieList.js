@@ -36,8 +36,8 @@ function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
     <div>
-      <MovieCard />
-      
+      <MovieCard title={movie.title} director={movie.director} metascore={movie.metascore} />
+
       {stars.map(star => (
         <div key={star} className="movie-star">
           {star}

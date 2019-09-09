@@ -9,7 +9,7 @@ const Movie = props => {
   useEffect(() => {
     // const id = 1;
     const id = props.match.params.id;
-    const singleMovie = MovieList.find(movie => `${movie.id}` === id);
+    // const singleMovie = MovieList.find(movie => `${movie.id}` === id);
 
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
@@ -37,7 +37,7 @@ const Movie = props => {
   const { title, director, metascore, stars } = movie;
   return (
     <>
-      <MovieCard />
+      <MovieCard title={movie.title} director={movie.director} metascore={movie.metascore} />
       <div>
         <div>
           {stars.map(star => (
