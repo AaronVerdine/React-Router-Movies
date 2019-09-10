@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import MovieList from "./MovieList";
 import MovieCard from "./MovieCard";
 
 const Movie = props => {
@@ -37,7 +36,7 @@ const Movie = props => {
   const { title, director, metascore, stars } = movie;
   return (
     <>
-      <MovieCard title={movie.title} director={movie.director} metascore={movie.metascore} />
+    <MovieCard title={title} director={director} metascore={metascore} />
       <div>
         <div>
           {stars.map(star => (

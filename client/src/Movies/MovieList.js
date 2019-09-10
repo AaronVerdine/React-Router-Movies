@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+
 import MovieCard from "./MovieCard";
+import Movie from "./Movie";
 
 const MovieList = props => {
   const [movies, setMovies] = useState([]);
+
   useEffect(() => {
     const getMovies = () => {
       axios
@@ -34,10 +37,11 @@ const MovieList = props => {
 
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
+
   return (
     <div>
-      <MovieCard title={movie.title} director={movie.director} metascore={movie.metascore} />
-
+    <MovieCard title={movie.title} director={movie.director} metascore={movie.metascore} />
+    {/* <Movie /> */}
       {stars.map(star => (
         <div key={star} className="movie-star">
           {star}
