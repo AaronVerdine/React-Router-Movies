@@ -3,9 +3,10 @@ import axios from "axios";
 import MovieCard from "./MovieCard";
 
 const Movie = props => {
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState();
 
   useEffect(() => {
+    console.log(props);
     // const id = 1;
     const id = props.match.params.id;
     // const singleMovie = MovieList.find(movie => `${movie.id}` === id);
@@ -29,6 +30,7 @@ const Movie = props => {
   //   addToSavedList(movie)
   // }
 
+  // Test condition that evaluates if useState() is empty, and then renders the MovieCard component
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
@@ -36,16 +38,20 @@ const Movie = props => {
   const { title, director, metascore, stars } = movie;
   return (
     <>
-    <MovieCard title={title} director={director} metascore={metascore} />
+      <MovieCard
+        title={title}
+        director={director}
+        metascore={metascore}
+        stars={stars}
+      />
       <div>
-        <div>
+        {/* <div>
           {stars.map(star => (
             <div key={star} className="movie-star">
               {star}
             </div>
           ))}
-        </div>
-        <div className="save-button">Save</div>
+        </div> */}
       </div>
     </>
   );
